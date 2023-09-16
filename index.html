@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <H1>RANJITH</H1>
+</head>
+<body>
+    <script src="script1.js"></script>
+    <script src="./script.js"></script> 
+
+    <script> 
+        var request = new XMLHttpRequest();
+        // console.log(request);
+
+        request.open('GET','file:///Users/yogeshwaranrathinam/Desktop/Js%20Day%201/resume.json');
+
+        //sending a connection
+
+        request.send();
+
+        request.onload = function(){
+            var data = JSON.parse(request.response)
+            console.log("length",data.length-1);}
+
+        // var arr = [1,2,3,4,'hi'];
+
+        // arr[2] = 'guvi';
+
+        // let arr1 = arr;
+
+        // console.log(arr,arr1);
+
+
+        // var obj = [{
+        //     name:'guvi',
+        //     place: 'Chennai'
+        // }]
+        // console.log(obj.name);
+        // obj.name = 'geek';
+        // console.log(obj.name);
+
+
+
+
+
+
+
+
+     </script>
+</body>
+</html>

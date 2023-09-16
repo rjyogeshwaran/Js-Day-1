@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const details =
+        {
+            "name": { "fname": "Yogeshwaran", "lname": "Rathianam" },
+            "address": { "place": "3/287, pilaiyar kovil street, Thuraipakkam, Chennai - 600097." },
+            "contact": { "phone": "8667868665", "email": "rjyogeshwaran@gmail.com", "instagram": "rj_yogeshwaran" },
+            "skills": { skill: ["Video Editing", "Cinematography", "Photography", "Administration", "CNC Programming"] },
+            "dob": { "date": "08/08/2000" },
+            "education": {
+                "school": { "10th": "Government Higher Secondary SchoolThuraipakkam", "marks": "85%" },
+                "college": { "Diploma in Mechanical Engineering": "Sri Sai Polytechnic College", "marks": "77%" },
+                "personDetails": {
+                    "father": "N.Rathinam", "mother": "N.Jayanthi", "sister": "R.Umamageshwari",
+                    "gender": "male(straight)", "Nationality": "Indian(NOT BHARATAN)", "Marital Status": "Single(I think it never needs a boolean)",
+                    "languages": "Tamil, English, Hindi theriyathu poda"
+                },
+                "Hobbies": { "hobby": "Driving,Netflix,Youtube,Podcasts,Music" }
+            }
+        }
+
+
+        var afa = Object.values(details.skills.skill);
+
+        console.log(afa);
+
+        //for loop.
+
+        for (let i = 0; i < afa.length; i++) {
+            console.log(afa[i]);
+        }
+
+        console.log("*************")
+
+        //for each loop.
+
+        afa.forEach(element => {
+            console.log(element);
+        });
+
+        console.log("*************")
+
+        //for in loop.
+
+        let data = (details.name);
+
+        console.log(data);
+
+        for (const key in data) {
+            if (data.hasOwnProperty.call(data, key)) {
+                const element = data[key];
+                console.log(element);
+            }
+        }
+
+        console.log("*************")
+
+        //for of loop.
+
+        for (const element of afa) {
+            console.log(element);
+        }
+
+        console.log("*************")
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script src="script.js"></script> --> => external js
+    <script>
+        //XMLHttpRequest object
+        //new keyword
+        //creating an XHR object
+        // send request
+
+        var request = new XMLHttpRequest();
+        // console.log(request);
+        //open a connection
+        request.open('GET', 'https://restcountries.com/v3.1/all');
+        //sending a connection
+        request.send();
+        //page load
+        request.onload = function () {
+            // console.log("Page loaded")
+            var data = JSON.parse(request.response)
+            console.log(data[0]);
+
+            let res = data.filter(element => element.region == 'Asia');
+            console.log(res)
+
+            let pop = data.filter(element => element.population < 200000)
+            console.log(pop);
+
+            let str = data.forEach(element => {
+                console.log(element.name), console.log(element.capital), console.log(element.flag)
+            });
+
+            let totalPop = data.reduce((acc, curr) => acc + curr.population, 0);
+
+            console.log(totalPop);
+
+            let ame = data.filter(element => element.continents == 'North America')
+            console.log(ame);
+
+            let usd = [];
+            // data.map(element => Object.keys(element.currencies).includes("USD") && usd.push(element));
+            data.map(element =>{
+             if (element.currencies) {
+                let x =  Object.keys(element.currencies);
+              
+            if (x.includes('USD')) {
+                  usd.push(element);  
+              }
+             }
+            })
+            console.log(usd)
+
+
+
+
+
+
+
+
+        }
+
+    </script>
+
+</body>
